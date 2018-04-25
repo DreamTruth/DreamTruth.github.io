@@ -83,14 +83,13 @@
 
 <p>下面介绍本人的解决方案：</p>
 
-<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nc">.tinyscale</span> <span class="p">{</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.tinyscale</span> <span class="p">{</span>
     <span class="nl">width</span><span class="p">:</span> <span class="m">200%</span><span class="p">;</span>
     <span class="nl">margin-left</span><span class="p">:</span> <span class="m">-50%</span><span class="p">;</span>
     <span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">0.5</span><span class="p">);</span>
             <span class="nl">transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">0.5</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>在含小字体的占宽 100% 的父级容器上添加 tinyscale 类，而后将其中所有的尺寸值及间距值乘 2。</p>
 
@@ -112,24 +111,22 @@
 
 <p>红框内的所有元素被一个父级元素包裹，该父级元素是定宽的，我们可以对其进行横向缩放：</p>
 
-<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nc">.parent</span> <span class="p">{</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.parent</span> <span class="p">{</span>
     <span class="nl">width</span><span class="p">:</span> <span class="m">200%</span><span class="p">;</span>
     <span class="nl">margin-left</span><span class="p">:</span> <span class="m">-50%</span><span class="p">;</span>
     <span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">0.5</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
             <span class="nl">transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">0.5</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>而内部元素是定高的假设为 20px，我们可以对其进行纵向缩放，并在纵向使用 margin 折回一个固定值 (1 - 0.5) * 20 / 2 像素：</p>
 
-<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nc">.child</span> <span class="p">{</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.child</span> <span class="p">{</span>
     <span class="nl">margin</span><span class="p">:</span> <span class="m">-5px</span> <span class="m">0</span><span class="p">;</span>
     <span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">0.5</span><span class="p">);</span>
             <span class="nl">transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">0.5</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>对于内部元素高度不确定的情况，暂未思考出解决方案，望大神指导！</p>
 

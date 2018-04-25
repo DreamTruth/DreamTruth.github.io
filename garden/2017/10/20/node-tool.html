@@ -71,15 +71,14 @@
 
 <p>假定该模板文件名为 template.html，我们这样读取它：</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s1">'template.html'</span><span class="p">,</span> <span class="s1">'utf8'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s1">'template.html'</span><span class="p">,</span> <span class="s1">'utf8'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// code</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><img src="http://oy4688ju4.bkt.clouddn.com/readfile-utf8.png" alt="" /></p>
 
@@ -89,7 +88,7 @@
 
 <p>获取到 .html 模板内容后如何解析并定位元素呢？正则匹配是可行的，但有更好的方法：使用 <a href="https://github.com/cheeriojs/cheerio">Cheerio</a>。</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">cheerio</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'cheerio'</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">cheerio</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'cheerio'</span><span class="p">);</span>
 <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s1">'template.html'</span><span class="p">,</span> <span class="s1">'utf8'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// code</span>
@@ -99,8 +98,7 @@
         <span class="c1">// code</span>
     <span class="p">}</span>
 <span class="p">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>其中 <strong>$</strong> 的使用与 jQuery 中的并无太大差异。</p>
 
@@ -122,15 +120,14 @@
   <p>Simple Git: A light weight interface for running git commands in any node.js application.</p>
 </blockquote>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">git</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'simple-git'</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">git</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'simple-git'</span><span class="p">);</span>
 <span class="nx">git</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">checkout</span><span class="p">(</span><span class="nx">branch</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">pull</span><span class="p">(</span><span class="s1">'origin'</span><span class="p">,</span> <span class="nx">branch</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">'origin'</span><span class="p">,</span> <span class="nx">branch</span><span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <hr />
 
@@ -144,17 +141,15 @@
 
 <p>执行如下命令开启服务并为该进程命名：</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>pm2 start ./bin/www --name <span class="o">[</span>名称]
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 start ./bin/www <span class="nt">--name</span> <span class="o">[</span>名称]
+</code></pre></div></div>
 
 <p><img src="http://oy4688ju4.bkt.clouddn.com/runstart.png" alt="" /></p>
 
 <p>当服务端代码更新时，需要重启服务，执行：</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>pm2 restart <span class="o">[</span>名称]
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 restart <span class="o">[</span>名称]
+</code></pre></div></div>
 
 <p><img src="http://oy4688ju4.bkt.clouddn.com/restart.png" alt="" /></p>
 
@@ -172,15 +167,14 @@
 
 <p>其实我只想转发一个请求解决跨域问题。使用到了 <a href="https://github.com/villadora/express-http-proxy">Express Http Proxy</a>。</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">proxy</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express-http-proxy'</span><span class="p">);</span>
-<span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'/hybrid/topic_reply/:id'</span><span class="p">,</span> <span class="nx">proxy</span><span class="p">(</span><span class="s1">'backend.test.env'</span><span class="p">,</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">proxy</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express-http-proxy'</span><span class="p">);</span>
+<span class="nx">router</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'/hybrid/topic_reply/:id'</span><span class="p">,</span> <span class="nx">proxy</span><span class="p">(</span><span class="s1">'backend.test.env'</span><span class="p">,</span> <span class="p">{</span>
     <span class="na">userResDecorator</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">proxyRes</span><span class="p">,</span> <span class="nx">proxyResData</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">proxyResData</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="s1">'utf8'</span><span class="p">));</span>
         <span class="k">return</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}));</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>此时访问 <strong>[我的域名]/hybrid/topic_reply/:id</strong> 可请求到 <strong>backend.test.env/hybrid/topic_reply/:id</strong> 的数据。其中 <strong>data</strong> 可随意修改，<strong>return</strong> 值为请求返回值。</p>
 

@@ -93,18 +93,16 @@
 
 <p>以防万一，先将 feature2 分支备份：</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>git checkout feature2
-git checkout -b feature2-copy
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout feature2
+git checkout <span class="nt">-b</span> feature2-copy
+</code></pre></div></div>
 
 <p><img src="http://orkxnrvmk.bkt.clouddn.com/copy-feature2.jpg" alt="" /></p>
 
 <p>我们来查看一下 feature2-copy 分支的提交记录：</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>git log
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git log
+</code></pre></div></div>
 
 <p><img src="http://orkxnrvmk.bkt.clouddn.com/log-feature2.jpg" alt="" /></p>
 
@@ -112,9 +110,8 @@ git checkout -b feature2-copy
 
 <p>使用 git rebase -i 来合并 commit，需要拼接回滚至的 commit 的 hashcode：</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>git rebase -i e08ddaf558b9ad84422db5e4b620dcab97623fde
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git rebase <span class="nt">-i</span> e08ddaf558b9ad84422db5e4b620dcab97623fde
+</code></pre></div></div>
 
 <p>而后出现如下对话框：</p>
 
@@ -138,9 +135,8 @@ git checkout -b feature2-copy
 
 <p>3 次提交被成功合并，可喜可贺！接下来我们需要 revert 被合并的提交：</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>git revert e544464c3de69adef5ca7556001abebaf40b218b
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git revert e544464c3de69adef5ca7556001abebaf40b218b
+</code></pre></div></div>
 
 <p><img src="http://orkxnrvmk.bkt.clouddn.com/revert-commit-feature2.jpg" alt="" /></p>
 
@@ -150,10 +146,9 @@ git checkout -b feature2-copy
 
 <p>此时天真的我认为将 feature2-copy 合并到测试分支即可成功抽去 feature2 的代码，其实不然。正确的做法是使用 git cherry-pick 将 feature2-copy 分支上 revert 提交合并到测试分支上：</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>git checkout master
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout master
 git cherry-pick b309f7944d2422d8fe647dca61bda518b192628f
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>此时，feature2 的代码成功从测试分支上抽离。</p>
 

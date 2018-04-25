@@ -86,25 +86,22 @@
 
 <h5 id="启动方式">启动方式</h5>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>meow-mock
-npm install
-npm run start
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>meow-mock
+npm <span class="nb">install
+</span>npm run start
+</code></pre></div></div>
 
 <p>默认端口号 8888，可在 <strong>/bin/www</strong> 文件中修改：</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">port</span> <span class="o">=</span> <span class="nx">normalizePort</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span> <span class="o">||</span> <span class="s1">'8888'</span><span class="p">);</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">port</span> <span class="o">=</span> <span class="nx">normalizePort</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span> <span class="o">||</span> <span class="s1">'8888'</span><span class="p">);</span>
+</code></pre></div></div>
 
 <p>未安装 Node.js 的请先移驾<a href="https://nodejs.org/en/">此处</a>下载并安装。</p>
 
 <p>未安装 Npm 的请先执行：</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>curl -L https://npmjs.com/install.sh | sh
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-L</span> https://npmjs.com/install.sh | sh
+</code></pre></div></div>
 
 <hr />
 
@@ -112,18 +109,17 @@ npm run start
 
 <p>在 <strong>/data</strong> 文件夹内创建 .js 接口文件，例如 example.js。打开 <strong>route.js</strong> 添加如下代码：</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">example</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'./data/example'</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">example</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'./data/example'</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">requestGatherLst</span> <span class="o">=</span> <span class="p">[</span>
     <span class="nx">example</span>
 <span class="p">];</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>可理解为在该服务中注册了刚刚创建的接口文件。我们可以创建多个接口文件 module1.js、module2.jd、module3.js…</p>
 
 <p>假定 example.js 代码如下：</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">type</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'../type'</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">type</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'../type'</span><span class="p">);</span>
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">example1</span><span class="p">:</span> <span class="p">{</span>
         <span class="na">url</span><span class="p">:</span> <span class="s1">'/example1/_data'</span><span class="p">,</span>
@@ -140,8 +136,7 @@ npm run start
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>显然，需要定义每一接口的 <strong>url</strong> 及 <strong>type</strong>，返回数据的讲究在于 data 回调函数的返回值。</p>
 
@@ -151,10 +146,10 @@ npm run start
   <p>所有数据均可动态生成</p>
 </blockquote>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">example1</span><span class="err">:</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">example1</span><span class="p">:</span> <span class="p">{</span>
     <span class="nl">url</span><span class="p">:</span> <span class="s1">'/example1/_data'</span><span class="p">,</span>
-    <span class="nx">type</span><span class="err">:</span> <span class="s1">'GET'</span><span class="p">,</span>
-    <span class="nx">data</span><span class="err">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">type</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">,</span>
+    <span class="nx">data</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="k">return</span> <span class="p">{</span>
             <span class="na">message</span><span class="p">:</span> <span class="s1">'请求成功'</span><span class="p">,</span>
             <span class="na">error</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -191,7 +186,7 @@ npm run start
                     <span class="na">length</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
                     <span class="na">index</span><span class="p">:</span> <span class="p">{</span>
                         <span class="na">name</span><span class="p">:</span> <span class="s1">'idx'</span><span class="p">,</span>
-                        <span class="na">format</span><span class="p">:</span> <span class="s1">'0\d'</span>
+                        <span class="na">format</span><span class="p">:</span> <span class="s1">'0</span><span class="err">\</span><span class="s1">d'</span>
                     <span class="p">},</span>
                     <span class="na">data</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
                         <span class="k">return</span> <span class="p">{</span>
@@ -204,8 +199,7 @@ npm run start
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li><strong>id -&gt;</strong> 返回 id，为避免重复使用时间戳。</li>
@@ -217,7 +211,7 @@ npm run start
 
 <p>id 怎么可以重复…想办法去重喽~</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">timestamps</span><span class="p">:</span> <span class="p">{},</span>
     <span class="na">id</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">_this</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
@@ -234,8 +228,7 @@ npm run start
         <span class="k">return</span> <span class="nx">recursion</span><span class="p">(</span><span class="nx">curtime</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>
@@ -288,13 +281,12 @@ npm run start
 
 <p>index 配置项便是为上述需求而生：</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">index</span><span class="err">:</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">index</span><span class="p">:</span> <span class="p">{</span>
     <span class="nl">name</span><span class="p">:</span> <span class="s1">'idx'</span><span class="p">,</span>
-    <span class="nx">format</span><span class="err">:</span> <span class="s1">'\d'</span><span class="p">,</span>
-    <span class="nx">type</span><span class="err">:</span> <span class="s1">'int'</span>
+    <span class="nx">format</span><span class="p">:</span> <span class="s1">'</span><span class="err">\</span><span class="s1">d'</span><span class="p">,</span>
+    <span class="nx">type</span><span class="p">:</span> <span class="s1">'int'</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>
@@ -330,14 +322,13 @@ npm run start
 
 <p><strong>推荐：</strong></p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">list</span><span class="err">:</span> <span class="nx">type</span><span class="p">.</span><span class="nx">list</span><span class="p">({</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">list</span><span class="p">:</span> <span class="nx">type</span><span class="p">.</span><span class="nx">list</span><span class="p">({</span>
     <span class="na">length</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
     <span class="na">data</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">return</span> <span class="nx">type</span><span class="p">.</span><span class="nx">number</span><span class="p">()</span>
     <span class="p">}</span>
 <span class="p">})</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>返回列表值不同：</p>
 
@@ -345,12 +336,11 @@ npm run start
 
 <p><strong>不推荐：</strong></p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">list</span><span class="err">:</span> <span class="nx">type</span><span class="p">.</span><span class="nx">list</span><span class="p">({</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">list</span><span class="p">:</span> <span class="nx">type</span><span class="p">.</span><span class="nx">list</span><span class="p">({</span>
     <span class="na">length</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
     <span class="na">data</span><span class="p">:</span> <span class="nx">type</span><span class="p">.</span><span class="nx">number</span><span class="p">()</span>
 <span class="p">})</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>返回列表值相同：</p>
 
@@ -364,11 +354,11 @@ npm run start
 
 <p>首先说明列表数据请求接口对象写法：</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">example2</span><span class="err">:</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">example2</span><span class="p">:</span> <span class="p">{</span>
     <span class="nl">url</span><span class="p">:</span> <span class="s1">'/example2/_data'</span><span class="p">,</span>
-    <span class="nx">type</span><span class="err">:</span> <span class="s1">'GET'</span><span class="p">,</span>
-    <span class="nx">list_name</span><span class="err">:</span> <span class="s1">'items'</span><span class="p">,</span>
-    <span class="nx">data</span><span class="err">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">type</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">,</span>
+    <span class="nx">list_name</span><span class="p">:</span> <span class="s1">'items'</span><span class="p">,</span>
+    <span class="nx">data</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="k">return</span> <span class="p">{</span>
             <span class="na">message</span><span class="p">:</span> <span class="s1">'请求成功'</span><span class="p">,</span>
             <span class="na">error</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
@@ -376,7 +366,7 @@ npm run start
                 <span class="na">length</span><span class="p">:</span> <span class="mi">36</span><span class="p">,</span>
                 <span class="na">index</span><span class="p">:</span> <span class="p">{</span>
                     <span class="na">name</span><span class="p">:</span> <span class="s1">'idx'</span><span class="p">,</span>
-                    <span class="na">format</span><span class="p">:</span> <span class="s1">'0\d'</span>
+                    <span class="na">format</span><span class="p">:</span> <span class="s1">'0</span><span class="err">\</span><span class="s1">d'</span>
                 <span class="p">},</span>
                 <span class="na">data</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
                     <span class="k">return</span> <span class="p">{</span>
@@ -390,8 +380,7 @@ npm run start
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>list_name</strong> 配置项决定了返回数据中究竟哪个字段是待分段的 list，其默认值为 data。</p>
 

@@ -65,7 +65,7 @@
 
 <p>app.scss 内定义的 @mixin、%、变量，若在 .vue 中引用需再次 import app.scss，否则 not found（sass 变量作用域的锅）：</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;style </span><span class="na">lang=</span><span class="s">"scss"</span> <span class="na">scoped</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style </span><span class="na">lang=</span><span class="s">"scss"</span> <span class="na">scoped</span><span class="nt">&gt;</span>
 <span class="k">@import</span> <span class="s1">"../assets/app.scss"</span><span class="p">;</span>
 <span class="nc">.gm-nodata</span> <span class="p">{</span>
     <span class="err">img,</span> <span class="err">p</span> <span class="err">{</span>
@@ -80,8 +80,7 @@
     <span class="p">}</span>
 <span class="err">}</span>
 <span class="nt">&lt;/style&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>每一 .vue 均 import app.scss，很麻烦…然而更严重的是：</p>
 
@@ -95,7 +94,7 @@
 
 <p>在 build/utils.js 的 exports.cssLoaders 函数内添加如下代码：</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">exports</span><span class="p">.</span><span class="nx">cssLoaders</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">exports</span><span class="p">.</span><span class="nx">cssLoaders</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// ...</span>
 
     <span class="kd">function</span> <span class="nx">generateSassResourceLoader</span> <span class="p">()</span> <span class="p">{</span>
@@ -131,8 +130,7 @@
         <span class="c1">// ...</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>Now you can use these resources without manually importing them.</p>
@@ -140,7 +138,7 @@
 
 <p>那我们可将 app.scss 添加至 sass loader resources 吗？像这样：</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">loaders</span> <span class="o">=</span> <span class="p">[</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">loaders</span> <span class="o">=</span> <span class="p">[</span>
     <span class="nx">cssLoader</span><span class="p">,</span>
     <span class="s1">'sass-loader'</span><span class="p">,</span>
     <span class="p">{</span>
@@ -154,8 +152,7 @@
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">]</span>       
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>不可以！build 后代码冗余：</p>
 

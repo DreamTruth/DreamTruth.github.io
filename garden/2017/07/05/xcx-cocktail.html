@@ -113,7 +113,7 @@
 
 <p>在分享 <strong>title</strong> 中加入了微信用户的昵称。当时考虑若用户拒绝被获取个人信息，那么分享 <strong>title</strong> 便是“我调制了一杯【鸡尾酒】，你也来试试吧！”。事实证明多此一举，当用户拒绝被获取个人信息时，分享 <strong>title</strong> 为小程序名称，并非 <strong>onShareAppMessage</strong> 中设置的 <strong>title</strong> 值。</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">getApp</span><span class="p">();</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">getApp</span><span class="p">();</span>
 <span class="nx">Page</span><span class="p">({</span>
     <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
         <span class="na">cocktailName</span><span class="p">:</span> <span class="s1">'鸡尾酒'</span>
@@ -126,8 +126,7 @@
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>未完待续…踩到新坑会更文~</p>
 

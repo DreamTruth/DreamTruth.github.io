@@ -2,10 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1ff9908-d3c7-43f3-9127-434cd1b80878" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/DreamTruth.github.io.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/garden/2016/12/30/markdown-theme.html" afterPath="$PROJECT_DIR$/garden/2016/12/30/markdown-theme.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/garden/2017/02/24/github-blog.html" afterPath="$PROJECT_DIR$/garden/2017/02/24/github-blog.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/garden/2017/03/01/tinyfont.html" afterPath="$PROJECT_DIR$/garden/2017/03/01/tinyfont.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/garden/2017/05/17/sass-application.html" afterPath="$PROJECT_DIR$/garden/2017/05/17/sass-application.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/garden/2017/06/15/git-revert.html" afterPath="$PROJECT_DIR$/garden/2017/06/15/git-revert.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/garden/2017/07/05/xcx-cocktail.html" afterPath="$PROJECT_DIR$/garden/2017/07/05/xcx-cocktail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/garden/2017/09/15/meow-mock.html" afterPath="$PROJECT_DIR$/garden/2017/09/15/meow-mock.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/garden/2017/10/20/node-tool.html" afterPath="$PROJECT_DIR$/garden/2017/10/20/node-tool.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/garden/2017/11/09/css-sector.html" afterPath="$PROJECT_DIR$/garden/2017/11/09/css-sector.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/garden/2017/11/16/svg-comet.html" afterPath="$PROJECT_DIR$/garden/2017/11/16/svg-comet.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/garden/2018/01/04/xcx-gm.html" afterPath="$PROJECT_DIR$/garden/2018/01/04/xcx-gm.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/garden/2018/02/06/sass-var.html" afterPath="$PROJECT_DIR$/garden/2018/02/06/sass-var.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/garden/2018/02/09/table.html" afterPath="$PROJECT_DIR$/garden/2018/02/09/table.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/garden/2018/03/02/dom-tree.html" afterPath="$PROJECT_DIR$/garden/2018/03/02/dom-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/garden/2018/03/05/ballade.html" afterPath="$PROJECT_DIR$/garden/2018/03/05/ballade.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,8 +42,58 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
+        <entry file="file://D:/DevKit/config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_config.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/_config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="basic.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/_layouts/basic.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-369">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="post.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/_layouts/post.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="575">
+              <caret line="53" column="29" lean-forward="true" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/assets/script/main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -55,6 +118,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/ceshi.html" />
+        <option value="$PROJECT_DIR$/.git/config" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -64,7 +129,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="1923" />
     <option name="y" value="24" />
     <option name="width" value="1932" />
@@ -93,6 +158,56 @@
             <path>
               <item name="DreamTruth.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="DreamTruth.github.io" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DreamTruth.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DreamTruth.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DreamTruth.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DreamTruth.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="_layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DreamTruth.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DreamTruth.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="_posts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DreamTruth.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DreamTruth.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DreamTruth.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DreamTruth.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="script" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DreamTruth.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DreamTruth.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DreamTruth.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DreamTruth.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="about" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DreamTruth.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DreamTruth.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="posts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -129,15 +244,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1524637489376</updated>
-      <workItem from="1524637490941" duration="688000" />
+      <workItem from="1524637490941" duration="3165000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="688000" />
+    <option name="totallyTimeSpent" value="3165000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1923" y="24" width="1932" height="1045" extended-state="1" />
+    <frame x="1923" y="24" width="1932" height="1045" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -177,6 +292,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.git/config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -185,10 +316,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://D:/DevKit/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/_posts/2016-12-30-markdown-theme.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2073">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/assets/script/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/_layouts/basic.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-369">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/_layouts/post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="53" column="29" lean-forward="true" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
           <folding />
         </state>
       </provider>

@@ -67,7 +67,7 @@
 
 <p>动用 js 获取 window 滚动位置，scrollX 即为首行向左偏移距离，scrollY 为首列向上偏移距离：</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">curX</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">curX</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">curY</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'scroll'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">scrollX</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">scrollX</span><span class="p">;</span>
@@ -79,8 +79,7 @@
     <span class="nx">curX</span> <span class="o">=</span> <span class="nx">scrollX</span><span class="p">;</span>
     <span class="nx">curY</span> <span class="o">=</span> <span class="nx">scrollY</span><span class="p">;</span>
 <span class="p">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>讲解完毕！</p>
 

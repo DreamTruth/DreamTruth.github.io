@@ -75,7 +75,7 @@
 
 <p>三角形的宽高如何计算？假定圆半径 <strong>$radius</strong> 为 100px，等分数 <strong>$count</strong> 为 15。则小扇形的圆心角为 <strong>360deg / 15</strong>，三角形的高为 100px，宽为 <strong>2 * 100px * tan(360deg / 15 / 2)</strong>。其中 <strong>360deg / 15 / 2</strong> 转化弧度制为 <strong>PI / 15</strong>（PI == 360deg / 2）。</p>
 
-<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nt">span</span> <span class="p">{</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">span</span> <span class="p">{</span>
     <span class="nl">width</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
     <span class="nl">height</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
     <span class="nl">border</span><span class="p">:</span> <span class="err">$</span><span class="n">radius</span> <span class="nb">solid</span> <span class="nb">transparent</span><span class="p">;</span>
@@ -83,8 +83,7 @@
     <span class="nl">border-left-width</span><span class="p">:</span> <span class="err">$</span><span class="n">borderWidth</span><span class="p">;</span>
     <span class="nl">border-right-width</span><span class="p">:</span> <span class="err">$</span><span class="n">borderWidth</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>数学欠佳的同学请自行科普…</p>
 
@@ -94,7 +93,7 @@
 
 <p>相关代码（其中 <strong>$diameter = 2 * $radius</strong> 为圆直径）：</p>
 
-<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nt">span</span> <span class="p">{</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">span</span> <span class="p">{</span>
     <span class="err">@if</span> <span class="err">$count</span> <span class="err">==</span> <span class="err">1</span> <span class="err">{</span>
         <span class="nl">width</span><span class="p">:</span> <span class="err">$</span><span class="n">diameter</span><span class="p">;</span>
         <span class="nl">height</span><span class="p">:</span> <span class="err">$</span><span class="n">diameter</span><span class="p">;</span>
@@ -110,12 +109,11 @@
         <span class="nl">border-right-width</span><span class="p">:</span> <span class="err">$</span><span class="n">borderWidth</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="err">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>最后，复制并逐一旋转扇形单元：</p>
 
-<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="k">@for</span> <span class="err">$</span><span class="n">index</span> <span class="n">from</span> <span class="m">0</span> <span class="n">to</span> <span class="err">$</span><span class="n">count</span> <span class="p">{</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@for</span> <span class="err">$</span><span class="n">index</span> <span class="n">from</span> <span class="m">0</span> <span class="n">to</span> <span class="err">$</span><span class="n">count</span> <span class="p">{</span>
     <span class="py">span</span><span class="p">:</span><span class="n">nth-child</span><span class="p">(</span><span class="err">#{$</span><span class="n">index</span> <span class="err">+</span> <span class="m">1</span><span class="p">}</span><span class="o">)</span> <span class="p">{</span>
         <span class="err">$</span><span class="nl">transform</span><span class="p">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">-50%</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span> <span class="n">rotate</span><span class="p">(</span><span class="m">360deg</span> <span class="p">/</span> <span class="err">$</span><span class="n">count</span> <span class="p">/</span> <span class="m">2</span> <span class="err">+</span> <span class="m">360deg</span> <span class="err">*</span> <span class="err">$</span><span class="n">index</span> <span class="p">/</span> <span class="err">$</span><span class="n">count</span><span class="p">);</span>
         <span class="err">$</span><span class="py">origin</span><span class="p">:</span> <span class="n">if</span><span class="p">(</span><span class="err">$</span><span class="n">count</span> <span class="err">==</span> <span class="m">2</span><span class="p">,</span> <span class="nb">bottom</span><span class="p">,</span> <span class="nb">center</span><span class="p">);</span>
@@ -125,8 +123,7 @@
                 <span class="nl">transform-origin</span><span class="p">:</span> <span class="err">$</span><span class="n">origin</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="err">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>果酱制作完毕，其它点缀请自行添加喽…本例完整代码<a href="https://github.com/sunmengyuan/metis/tree/master/css/sector">在此</a>。</p>
 
@@ -140,10 +137,9 @@
 
 <p>本例调试方法：</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>sector
-sass --watch style.scss:style.css --debug-info
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>sector
+sass <span class="nt">--watch</span> style.scss:style.css <span class="nt">--debug-info</span>
+</code></pre></div></div>
 
 <hr />
 

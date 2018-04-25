@@ -126,25 +126,24 @@
 
 <p>routes.json 如下：</p>
 
-<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"remote_file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://p2znmi5xx.bkt.clouddn.com/dist/demo/Demo-13700fc663.html"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://backend.igengmei.com/demo[/]?.*"</span><span class="w">
+            </span><span class="s2">"remote_file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://p2znmi5xx.bkt.clouddn.com/dist/demo/Demo-13700fc663.html"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://backend.igengmei.com/demo[/]?.*"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"remote_file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://p2znmi5xx.bkt.clouddn.com/dist/demo/Album-a757d93443.html"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://backend.igengmei.com/album[/]?.*"</span><span class="w">
+            </span><span class="s2">"remote_file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://p2znmi5xx.bkt.clouddn.com/dist/demo/Album-a757d93443.html"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://backend.igengmei.com/album[/]?.*"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"remote_file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://p2znmi5xx.bkt.clouddn.com/dist/post/ArticleDetail-d5c43ffc46.html"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://backend.igengmei.com/article/detail[/]?.*"</span><span class="w">
+            </span><span class="s2">"remote_file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://p2znmi5xx.bkt.clouddn.com/dist/post/ArticleDetail-d5c43ffc46.html"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://backend.igengmei.com/article/detail[/]?.*"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="nt">"deploy_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fri Mar 16 2018 15:27:57 GMT+0800 (CST)"</span><span class="w">
+    </span><span class="s2">"deploy_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fri Mar 16 2018 15:27:57 GMT+0800 (CST)"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>欠你一个回答~</p>
 
@@ -190,7 +189,7 @@
 
 <p>无用资源需丢弃，公共资源也需提取。假定页面 A、B 均引用资源 C，资源 C 便可单独提取。可使用 <a href="https://doc.webpack-china.org/plugins/commons-chunk-plugin">CommonsChunkPlugin</a> 达成对第三方库，公用组件的抽离。一提取项目所应用 node_module 脚本示例：</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="k">new</span> <span class="nx">webpack</span><span class="p">.</span><span class="nx">optimize</span><span class="p">.</span><span class="nx">CommonsChunkPlugin</span><span class="p">({</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nx">webpack</span><span class="p">.</span><span class="nx">optimize</span><span class="p">.</span><span class="nx">CommonsChunkPlugin</span><span class="p">({</span>
     <span class="na">name</span><span class="p">:</span> <span class="s1">'vendor'</span><span class="p">,</span>
     <span class="na">minChunks</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">module</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="p">(</span>
@@ -202,8 +201,7 @@
         <span class="p">)</span>
     <span class="p">}</span>
 <span class="p">})</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>项目中所应用到的 node_module 将统一打包至 vendor.js。公用脚本也需预置，也需检测更新，若认为监听众多资源较麻烦将脚本内联至 .html 也可，但我不提倡这样做（失去了去冗余的意义）。预置的公用脚本拷贝到哪里？拷贝至手机内存空间不够怎么破，拷贝至存储卡被用户误删怎么破，客户端同学为此很纠结…emmm</p>
 
@@ -236,12 +234,11 @@
 
 <p>接下来讨论 manifest 的注入时机。manifest 包含模块处理逻辑，在 Webpack 编译及映射应用代码时，模块信息被记录至 manifest，runtime 则根据 manifest 加载模块。</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="k">new</span> <span class="nx">webpack</span><span class="p">.</span><span class="nx">optimize</span><span class="p">.</span><span class="nx">CommonsChunkPlugin</span><span class="p">({</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nx">webpack</span><span class="p">.</span><span class="nx">optimize</span><span class="p">.</span><span class="nx">CommonsChunkPlugin</span><span class="p">({</span>
     <span class="na">name</span><span class="p">:</span> <span class="s1">'manifest'</span><span class="p">,</span>
     <span class="na">minChunks</span><span class="p">:</span> <span class="kc">Infinity</span>
 <span class="p">})</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>任一模块更新均会引发它的细微变化（但可通过 minChunks 控制 manifest 影响范围），且所有页面加载依赖 manifest。可怕的现象发生了：manifest 更新所有 .html 的 Hash 更新 -&gt; 所有 .html 被重新下载。我们可先为 .html 打 Hash 再将 manifest 内联，因为未更新模块调用旧 manifest 不会受影响。</p>
 
@@ -274,8 +271,8 @@
 
 <p>含 <strong>&lt;%=Page%&gt;</strong> 占位符的 entry.js：</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="nx">Vue</span> <span class="nx">from</span> <span class="s1">'vue'</span>
-<span class="kr">import</span> <span class="nx">Page</span> <span class="nx">from</span> <span class="s1">'&lt;%=Page%&gt;'</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="s1">'vue'</span>
+<span class="k">import</span> <span class="nx">Page</span> <span class="k">from</span> <span class="s1">'&lt;%=Page%&gt;'</span>
 <span class="cm">/* eslint-disable no-new */</span>
 <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
     <span class="na">el</span><span class="p">:</span> <span class="s1">'#app'</span><span class="p">,</span>
@@ -284,56 +281,53 @@
         <span class="nx">Page</span>
     <span class="p">}</span>
 <span class="p">})</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>生成多 entry 的 gulp task：</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'entries'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'entries'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">flag</span> <span class="o">=</span> <span class="kc">true</span>
     <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">routes</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// 检查 entry 是否已存在</span>
-        <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="err">`</span><span class="p">.</span><span class="o">/</span><span class="nx">entry</span><span class="o">/</span><span class="nx">entries</span><span class="o">/</span><span class="nx">$</span><span class="p">{</span><span class="nx">routes</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">view</span><span class="p">}.</span><span class="nx">js</span><span class="err">`</span><span class="p">)</span>
+        <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s2">`./entry/entries/</span><span class="p">${</span><span class="nx">routes</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">view</span><span class="p">}</span><span class="s2">.js`</span><span class="p">)</span>
             <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'data'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
                 <span class="c1">// 已存在 entry 不重复构造</span>
                 <span class="nx">flag</span> <span class="o">=</span> <span class="kc">false</span>
             <span class="p">})</span>
             <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'end'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
                 <span class="k">if</span> <span class="p">(</span><span class="nx">flag</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'new entry: '</span><span class="p">,</span> <span class="err">`</span><span class="o">/</span><span class="nx">entries</span><span class="o">/</span><span class="nx">$</span><span class="p">{</span><span class="nx">routes</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">view</span><span class="p">}.</span><span class="nx">js</span><span class="err">`</span><span class="p">)</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'new entry: '</span><span class="p">,</span> <span class="s2">`/entries/</span><span class="p">${</span><span class="nx">routes</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">view</span><span class="p">}</span><span class="s2">.js`</span><span class="p">)</span>
                     <span class="c1">// 构造新 entry</span>
                     <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'./entry/entry.js'</span><span class="p">)</span>
                         <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">replace</span><span class="p">({</span>
                             <span class="na">patterns</span><span class="p">:</span> <span class="p">[</span>
                                 <span class="p">{</span>
                                     <span class="na">match</span><span class="p">:</span> <span class="sr">/&lt;%=Page%&gt;/g</span><span class="p">,</span>
-                                    <span class="na">replacement</span><span class="p">:</span> <span class="err">`</span><span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">views</span><span class="o">/</span><span class="nx">$</span><span class="p">{</span><span class="nx">routes</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">path</span><span class="p">}</span><span class="nx">$</span><span class="p">{</span><span class="nx">routes</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">view</span><span class="p">}</span><span class="err">`</span>
+                                    <span class="na">replacement</span><span class="p">:</span> <span class="s2">`../../src/views/</span><span class="p">${</span><span class="nx">routes</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">path</span><span class="p">}${</span><span class="nx">routes</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">view</span><span class="p">}</span><span class="s2">`</span>
                                 <span class="p">}</span>
                             <span class="p">]</span>
                         <span class="p">}))</span>
-                        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">rename</span><span class="p">(</span><span class="err">`</span><span class="nx">entries</span><span class="o">/</span><span class="nx">$</span><span class="p">{</span><span class="nx">routes</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">view</span><span class="p">}.</span><span class="nx">js</span><span class="err">`</span><span class="p">))</span>
+                        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">rename</span><span class="p">(</span><span class="s2">`entries/</span><span class="p">${</span><span class="nx">routes</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">view</span><span class="p">}</span><span class="s2">.js`</span><span class="p">))</span>
                         <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'./entry/'</span><span class="p">))</span>
                 <span class="p">}</span>
                 <span class="nx">flag</span> <span class="o">=</span> <span class="kc">true</span>
             <span class="p">})</span>
     <span class="p">}</span>
 <span class="p">})</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>仅生产环境执行 gulp entries 构造多入口，开发环境单入口即可，免去研发同学构造 entry 的成本。</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">entries</span> <span class="p">()</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">entries</span> <span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">entries</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">routes</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">entries</span><span class="p">[</span><span class="nx">routes</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">view</span><span class="p">]</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">===</span> <span class="s1">'production'</span>
-            <span class="p">?</span> <span class="err">`</span><span class="p">.</span><span class="o">/</span><span class="nx">entry</span><span class="o">/</span><span class="nx">entries</span><span class="o">/</span><span class="nx">$</span><span class="p">{</span><span class="nx">routes</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">view</span><span class="p">}.</span><span class="nx">js</span><span class="err">`</span>
+            <span class="p">?</span> <span class="s2">`./entry/entries/</span><span class="p">${</span><span class="nx">routes</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">view</span><span class="p">}</span><span class="s2">.js`</span>
             <span class="p">:</span> <span class="s1">'./entry/dev.js'</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="nx">entries</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h5 id="开发环境引用本地图片生产环境引用-cdn-图片">开发环境引用本地图片、生产环境引用 CDN 图片</h5>
 
@@ -345,22 +339,21 @@
 
 <p>开发阶段书写相对路径引用本地资源，免去研发自行上传图片的烦恼且模式与传统 Web 开发保持一致。生产环境直接转化图片链接为 CDN 路径。并将所有 image 单独打包至 assets/ 一同上传 CDN，此时 .html 对 CDN 图片的引用生效了。</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
     <span class="nl">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.(</span><span class="sr">png|jpe</span><span class="se">?</span><span class="sr">g|gif|svg</span><span class="se">)(\?</span><span class="sr">.*</span><span class="se">)?</span><span class="sr">$/</span><span class="p">,</span>
-    <span class="nx">loader</span><span class="err">:</span> <span class="s1">'url-loader'</span><span class="p">,</span>
-    <span class="nx">options</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nx">loader</span><span class="p">:</span> <span class="s1">'url-loader'</span><span class="p">,</span>
+    <span class="nx">options</span><span class="p">:</span> <span class="p">{</span>
         <span class="nl">limit</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="nx">name</span><span class="err">:</span> <span class="s1">'assets/imgs/[name]-[hash:10].[ext]'</span>
+        <span class="nx">name</span><span class="p">:</span> <span class="s1">'assets/imgs/[name]-[hash:10].[ext]'</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>为防止 CDN 缓存导致图片无法及时更新，build 后图片名称添加 Hash 后缀。在此我设置 Base64 转化 limit 为 1，防止 HTML 穿插过多 Base64 格式图片阻塞加载。</p>
 
 <p>生产环境图片链接转化 CDN 路径代码如下：</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">settings</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'../settings'</span><span class="p">)</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">settings</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'../settings'</span><span class="p">)</span>
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">dev</span><span class="p">:</span> <span class="p">{</span>
         <span class="c1">// code...</span>
@@ -368,12 +361,11 @@
     <span class="na">build</span><span class="p">:</span> <span class="p">{</span>
         <span class="na">assetsRoot</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">'../../dist'</span><span class="p">),</span>
         <span class="na">assetsSubDirectory</span><span class="p">:</span> <span class="s1">'static'</span><span class="p">,</span>
-        <span class="na">assetsPublicPath</span><span class="p">:</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">settings</span><span class="p">.</span><span class="nx">cdn</span><span class="p">}</span><span class="sr">/`</span><span class="err">,
-</span>        <span class="c1">// code...</span>
+        <span class="na">assetsPublicPath</span><span class="p">:</span> <span class="s2">`</span><span class="p">${</span><span class="nx">settings</span><span class="p">.</span><span class="nx">cdn</span><span class="p">}</span><span class="s2">/`</span><span class="p">,</span>
+        <span class="c1">// code...</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <hr />
 
@@ -397,27 +389,26 @@
 
 <p>假定路由配置为：</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
-    <span class="s2">"/demo"</span><span class="err">:</span> <span class="p">{</span>
-        <span class="s2">"view"</span><span class="err">:</span> <span class="s2">"Demo"</span><span class="p">,</span>
-        <span class="s2">"path"</span><span class="err">:</span> <span class="s2">"demo/"</span><span class="p">,</span>
-        <span class="s2">"query"</span><span class="err">:</span> <span class="p">[</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+    <span class="s2">"/demo"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"view"</span><span class="p">:</span> <span class="s2">"Demo"</span><span class="p">,</span>
+        <span class="s2">"path"</span><span class="p">:</span> <span class="s2">"demo/"</span><span class="p">,</span>
+        <span class="s2">"query"</span><span class="p">:</span> <span class="p">[</span>
             <span class="s2">"topic_id"</span><span class="p">,</span>
             <span class="s2">"service_id"</span>
         <span class="p">]</span>
     <span class="p">},</span>
-    <span class="s2">"/album"</span><span class="err">:</span> <span class="p">{</span>
-        <span class="s2">"view"</span><span class="err">:</span> <span class="s2">"Album"</span><span class="p">,</span>
-        <span class="s2">"path"</span><span class="err">:</span> <span class="s2">"demo/"</span>
+    <span class="s2">"/album"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"view"</span><span class="p">:</span> <span class="s2">"Album"</span><span class="p">,</span>
+        <span class="s2">"path"</span><span class="p">:</span> <span class="s2">"demo/"</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>生成 routes.json 为：</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
-    <span class="s2">"items"</span><span class="err">:</span> <span class="p">[</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+    <span class="s2">"items"</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="s2">"remote_file"</span><span class="p">:</span> <span class="s2">"http://p2znmi5xx.bkt.clouddn.com/dist/demo/Demo-2392a800be.html"</span><span class="p">,</span>
             <span class="s2">"uri"</span><span class="p">:</span> <span class="s2">"https://backend.igengmei.com/demo[/]?.*"</span>
@@ -427,16 +418,15 @@
             <span class="s2">"uri"</span><span class="p">:</span> <span class="s2">"https://backend.igengmei.com/album[/]?.*"</span>
         <span class="p">}</span>
     <span class="p">],</span>
-    <span class="s2">"deploy_time"</span><span class="err">:</span> <span class="s2">"Mon Mar 19 2018 19:41:22 GMT+0800 (CST)"</span>
+    <span class="s2">"deploy_time"</span><span class="p">:</span> <span class="s2">"Mon Mar 19 2018 19:41:22 GMT+0800 (CST)"</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>开发环境通过 localhost:8080/demo?topic_id=&amp;service_id= 访问 Demo 页面，形如 vue-router 为我们构建的路由。而生产环境访问路径为 file:////dist/demo/Demo-2392a800be.html?uri=https%3A%2F%2Fbackend.igengmei.com%2Fdemo%3Ftopic_id%3D%26service_id%3D，获取参数需解析 uri。</p>
 
 <p>因两大环境参数解析方式不同，需自行封装 $router，例如 this.$router.query 的定义：</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">$router</span><span class="p">:</span> <span class="p">{</span>
         <span class="na">query</span><span class="p">:</span> <span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
             <span class="kd">var</span> <span class="nx">search</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span>
@@ -458,23 +448,20 @@
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>可将 $router 绑定至 Vue.prototype：</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">App</span><span class="p">.</span><span class="nx">install</span> <span class="o">=</span> <span class="p">(</span><span class="nx">Vue</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">App</span><span class="p">.</span><span class="nx">install</span> <span class="o">=</span> <span class="p">(</span><span class="nx">Vue</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">Vue</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">$router</span> <span class="o">=</span> <span class="nx">App</span><span class="p">.</span><span class="nx">$router</span>
 <span class="p">}</span>
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">App</span>
-</code></pre>
-</div>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span>
+</code></pre></div></div>
 
 <p>在 entry.js 执行：</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">App</span><span class="p">)</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">App</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>此时任一 .vue 可直接调用 this.$router，无需 import。调用频率较高的 method 均可 bind 至 Vue.prototype，例如对请求的封装 this.$request。</p>
 

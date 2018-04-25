@@ -71,7 +71,7 @@
 
 <p>传统做法：</p>
 
-<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* m-module-list.css */</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* m-module-list.css */</span>
 <span class="nc">.module-list</span> <span class="nt">li</span> <span class="p">{</span>
     <span class="nl">font-size</span><span class="p">:</span> <span class="m">14px</span><span class="p">;</span>
     <span class="nl">line-height</span><span class="p">:</span> <span class="m">22px</span><span class="p">;</span>
@@ -89,14 +89,13 @@
     <span class="nl">border-bottom</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
     <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>显然，传统做法会产生 <strong>冗余</strong> 代码。对 .module-list li 的 border-bottom 及 margin-bottom 定义了两次（很好的体现了 css <strong>层叠</strong> 的理念）。</p>
 
 <p>使用变量默认值：</p>
 
-<div class="language-sass highlighter-rouge"><pre class="highlight"><code><span class="cm">/* m-module-list.scss */
+<div class="language-sass highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* m-module-list.scss */
 </span><span class="nv">$borderBottom</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="mh">#F0F0F0</span> <span class="o">!</span><span class="nb">default</span><span class="err">;</span>
 <span class="nv">$marginBottom</span><span class="p">:</span> <span class="nb">none</span> <span class="o">!</span><span class="nb">default</span><span class="err">;</span>
 
@@ -117,12 +116,11 @@
 <span class="nv">$marginBottom</span><span class="p">:</span> <span class="m">10px</span><span class="err">;</span>
 
 <span class="k">@import</span> <span class="s">'m-module-list';</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>解析后的 css 代码：</p>
 
-<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nc">.module-list</span> <span class="nt">li</span> <span class="p">{</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.module-list</span> <span class="nt">li</span> <span class="p">{</span>
     <span class="nl">font-size</span><span class="p">:</span> <span class="m">14px</span><span class="p">;</span>
     <span class="nl">line-height</span><span class="p">:</span> <span class="m">22px</span><span class="p">;</span>
     <span class="nl">color</span><span class="p">:</span> <span class="m">#666</span><span class="p">;</span>
@@ -131,14 +129,13 @@
     <span class="nl">border-bottom</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
     <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>上述方法是存在缺陷的：定义 <strong>全局变量</strong> 很容易造成 <strong>污染</strong>。但自 sass v3.4 便不存在这样的问题了，为什么这样讲？</p>
 
 <p>先看一段示例：</p>
 
-<div class="language-sass highlighter-rouge"><pre class="highlight"><code><span class="nv">$color</span><span class="p">:</span> <span class="no">red</span><span class="err">;</span>
+<div class="language-sass highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$color</span><span class="p">:</span> <span class="no">red</span><span class="err">;</span>
 <span class="nt">p</span> <span class="err">{</span>
     <span class="nv">$color</span><span class="p">:</span> <span class="no">yellow</span><span class="err">;</span>
     <span class="nl">color</span><span class="p">:</span> <span class="nv">$color</span><span class="err">;</span>
@@ -146,54 +143,49 @@
 <span class="nt">a</span> <span class="err">{</span>
     <span class="nl">color</span><span class="p">:</span> <span class="nv">$color</span><span class="err">;</span>
 <span class="err">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>sass v3.3 解析后的 css 代码：</p>
 
-<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nt">p</span> <span class="p">{</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span> <span class="p">{</span>
     <span class="nl">color</span><span class="p">:</span> <span class="no">yellow</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nt">a</span> <span class="p">{</span>
     <span class="nl">color</span><span class="p">:</span> <span class="no">yellow</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>sass v3.4 解析后的 css 代码：</p>
 
-<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nt">p</span> <span class="p">{</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span> <span class="p">{</span>
     <span class="nl">color</span><span class="p">:</span> <span class="no">yellow</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nt">a</span> <span class="p">{</span>
     <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>自 sass v3.4 变量的解析遵循：底层作用域内声明的变量相当于局部变量，不影响全局变量。</p>
 
 <p>使用 javascript 解释：</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> 
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> 
 <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> 
     <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> 
 <span class="p">})();</span> 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// -&gt; 1</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>而 sass v3.3 及以前对变量的设计思路为：在底层作用域声明变量相当于修改全局变量，它处调用该变量时会使用覆盖的新值。</p>
 
 <p>使用 javascript 解释：</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> 
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> 
 <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> 
     <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> 
 <span class="p">})();</span> 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// -&gt; 5</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="特殊变量">特殊变量</h4>
 
@@ -230,7 +222,7 @@
 
 <p>相关代码：</p>
 
-<div class="language-sass highlighter-rouge"><pre class="highlight"><code><span class="nv">$thumbType</span><span class="p">:</span> <span class="nb">default</span><span class="o">,</span> <span class="n">activity</span><span class="o">,</span> <span class="n">special</span><span class="err">;</span>
+<div class="language-sass highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$thumbType</span><span class="p">:</span> <span class="nb">default</span><span class="o">,</span> <span class="n">activity</span><span class="o">,</span> <span class="n">special</span><span class="err">;</span>
 <span class="k">@each</span> <span class="nv">$type</span> <span class="n">in</span> <span class="nv">$thumbType</span> <span class="err">{</span>
     <span class="nv">%</span><span class="si">#{</span><span class="nv">$type</span><span class="si">}</span><span class="nv">-thumb</span> <span class="err">{</span>
         <span class="nl">background</span><span class="p">:</span> <span class="sx">url("../img/</span><span class="si">#{</span><span class="nv">$type</span><span class="si">}</span><span class="sx">-nothumb.jpg")</span> <span class="nb">no-repeat</span> <span class="m">0</span> <span class="m">0</span><span class="err">;</span>
@@ -250,12 +242,11 @@
 <span class="nc">.section3</span> <span class="nc">.thumb</span> <span class="err">{</span>
     <span class="k">@extend</span> <span class="nv">%special-thumb</span><span class="o">;</span>
 <span class="err">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>解析后的 css 代码：</p>
 
-<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nc">.section1</span> <span class="nc">.thumb</span> <span class="p">{</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.section1</span> <span class="nc">.thumb</span> <span class="p">{</span>
     <span class="nl">background</span><span class="p">:</span> <span class="sx">url("../img/default-nothumb.jpg")</span> <span class="nb">no-repeat</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
     <span class="nl">background-size</span><span class="p">:</span> <span class="m">100%</span> <span class="nb">auto</span><span class="p">;</span>
     <span class="nl">padding-bottom</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
@@ -276,8 +267,7 @@
     <span class="nl">height</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
     <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>Map 类型</li>
@@ -302,7 +292,7 @@
 
 <p>相关代码：</p>
 
-<div class="language-sass highlighter-rouge"><pre class="highlight"><code><span class="nv">$btnColor</span><span class="p">:</span> <span class="p">(</span>
+<div class="language-sass highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$btnColor</span><span class="p">:</span> <span class="p">(</span>
     <span class="na">main</span><span class="p">:</span> <span class="p">(</span>
         <span class="na">normal</span><span class="p">:</span> <span class="p">(</span>
             <span class="nl">font</span><span class="p">:</span> <span class="mh">#C53336</span><span class="o">,</span>
@@ -366,12 +356,11 @@
 <span class="nt">a</span><span class="nc">.btn-weak</span> <span class="err">{</span>
     <span class="k">@extend</span> <span class="nv">%btn-weak</span><span class="o">;</span>
 <span class="err">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>解析后的 css 代码：</p>
 
-<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nt">a</span><span class="nc">.btn-main</span> <span class="p">{</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">a</span><span class="nc">.btn-main</span> <span class="p">{</span>
     <span class="nl">color</span><span class="p">:</span> <span class="m">#C53336</span><span class="p">;</span>
     <span class="nl">border-color</span><span class="p">:</span> <span class="m">#C53336</span><span class="p">;</span>
     <span class="nl">background-color</span><span class="p">:</span> <span class="m">#FFF</span><span class="p">;</span>
@@ -401,8 +390,7 @@
     <span class="nl">border-color</span><span class="p">:</span> <span class="m">#CCC</span><span class="p">;</span>
     <span class="nl">background-color</span><span class="p">:</span> <span class="m">#FFF</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <hr />
 
@@ -418,7 +406,7 @@
 
 <p>先看一段很糟糕的代码，嵌套层级过多。层级关系的展现虽清晰，却莫名加高了选择器的 <strong>优先级</strong>。那么在重置样式的时候便需要加更高的优先级，由此恶性循环。</p>
 
-<div class="language-sass highlighter-rouge"><pre class="highlight"><code><span class="nc">.parent</span> <span class="err">{</span>
+<div class="language-sass highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.parent</span> <span class="err">{</span>
     <span class="nc">.child1</span> <span class="err">{</span>
         <span class="nl">width</span><span class="p">:</span> <span class="m">20px</span><span class="err">;</span>
         <span class="nc">.child1-1</span> <span class="err">{</span>
@@ -429,12 +417,11 @@
         <span class="err">}</span>
     <span class="err">}</span>
 <span class="err">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>解析后的 css 代码：</p>
 
-<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nc">.parent</span> <span class="nc">.child1</span> <span class="p">{</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.parent</span> <span class="nc">.child1</span> <span class="p">{</span>
     <span class="nl">width</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nc">.parent</span> <span class="nc">.child1</span> <span class="nc">.child1-1</span> <span class="p">{</span>
@@ -443,12 +430,11 @@
 <span class="nc">.parent</span> <span class="nc">.child1</span> <span class="nc">.child1-1</span> <span class="nc">.child1-1-1</span> <span class="p">{</span>
     <span class="nl">width</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>显然，.parent .child1 .child1-1 .child1-1-1 的优先级很高却完全没必要，我们需要做的便是降级。</p>
 
-<div class="language-sass highlighter-rouge"><pre class="highlight"><code><span class="nc">.parent</span> <span class="err">{</span>
+<div class="language-sass highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.parent</span> <span class="err">{</span>
     <span class="nc">.child1</span> <span class="err">{</span>
         <span class="nl">width</span><span class="p">:</span> <span class="m">20px</span><span class="err">;</span>
         <span class="k">@at-root</span> <span class="nc">.child1-1</span> <span class="err">{</span>
@@ -459,12 +445,11 @@
         <span class="err">}</span>
     <span class="err">}</span>
 <span class="err">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>解析后的 css 代码：</p>
 
-<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nc">.parent</span> <span class="nc">.child1</span> <span class="p">{</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.parent</span> <span class="nc">.child1</span> <span class="p">{</span>
     <span class="nl">width</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nc">.child1-1</span> <span class="p">{</span>
@@ -473,12 +458,11 @@
 <span class="nc">.child1-1-1</span> <span class="p">{</span>
     <span class="nl">width</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>其实这并不是我想要的，我想要的是：</p>
 
-<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nc">.parent</span> <span class="nc">.child1</span> <span class="p">{</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.parent</span> <span class="nc">.child1</span> <span class="p">{</span>
     <span class="nl">width</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nc">.parent</span> <span class="nc">.child1-1</span> <span class="p">{</span>
@@ -487,8 +471,7 @@
 <span class="nc">.parent</span> <span class="nc">.child1-1-1</span> <span class="p">{</span>
     <span class="nl">width</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>显然 @at-root 无法控制跳出的级数，无奈。</p>
 
@@ -496,7 +479,7 @@
 
 <p>示例代码：</p>
 
-<div class="language-sass highlighter-rouge"><pre class="highlight"><code><span class="nc">.demo</span> <span class="err">{</span>
+<div class="language-sass highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.demo</span> <span class="err">{</span>
     <span class="nl">animation</span><span class="p">:</span> <span class="n">motion</span> <span class="m">1s</span> <span class="n">infinite</span><span class="err">;</span>
     <span class="k">@at-root</span> <span class="err">{</span>
         <span class="k">@keyframes</span> <span class="nt">motion</span> <span class="err">{</span>
@@ -505,32 +488,29 @@
         <span class="err">}</span>
     <span class="err">}</span>
 <span class="err">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>解析后的 css 代码：</p>
 
-<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nc">.demo</span> <span class="p">{</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.demo</span> <span class="p">{</span>
     <span class="nl">animation</span><span class="p">:</span> <span class="n">motion</span> <span class="m">1s</span> <span class="n">infinite</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="k">@keyframes</span> <span class="n">motion</span> <span class="p">{</span>
     <span class="nt">0</span><span class="o">%</span> <span class="p">{</span><span class="nl">background-color</span><span class="p">:</span> <span class="no">red</span><span class="p">;}</span>
     <span class="nt">100</span><span class="o">%</span> <span class="p">{</span><span class="nl">background-color</span><span class="p">:</span> <span class="no">yellow</span><span class="p">;}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>其实上述是 sass v3.3 之前的做法，自 sass v3.4 这样书写即可：</p>
 
-<div class="language-sass highlighter-rouge"><pre class="highlight"><code><span class="nc">.demo</span> <span class="err">{</span>
+<div class="language-sass highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.demo</span> <span class="err">{</span>
     <span class="nl">animation</span><span class="p">:</span> <span class="n">motion</span> <span class="m">1s</span> <span class="n">infinite</span><span class="err">;</span>
     <span class="k">@keyframes</span> <span class="nt">motion</span> <span class="err">{</span>
         <span class="na">0</span><span class="err">% {</span><span class="nl">background-color</span><span class="p">:</span> <span class="no">red</span><span class="err">;}</span>
         <span class="na">100</span><span class="err">% {</span><span class="nl">background-color</span><span class="p">:</span> <span class="no">yellow</span><span class="err">;}</span>
     <span class="err">}</span>
 <span class="err">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>@keyframes 会自动跳出父级的限制。</p>
 
@@ -552,7 +532,7 @@
 
 <p>相关代码：</p>
 
-<div class="language-sass highlighter-rouge"><pre class="highlight"><code><span class="nv">$compatibleBrowser</span><span class="p">:</span> <span class="n">webkit</span><span class="o">,</span> <span class="n">moz</span><span class="o">,</span> <span class="n">o</span><span class="err">;</span>
+<div class="language-sass highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$compatibleBrowser</span><span class="p">:</span> <span class="n">webkit</span><span class="o">,</span> <span class="n">moz</span><span class="o">,</span> <span class="n">o</span><span class="err">;</span>
 <span class="k">@mixin</span> <span class="nf">addPrefix</span> <span class="p">(</span><span class="nv">$property</span><span class="o">,</span> <span class="nv">$value</span><span class="p">)</span> <span class="err">{</span>
     <span class="k">@each</span> <span class="nv">$prefix</span> <span class="n">in</span> <span class="nv">$compatibleBrowser</span> <span class="err">{</span>
         <span class="na">-</span><span class="si">#{</span><span class="nv">$prefix</span><span class="si">}</span><span class="na">-</span><span class="si">#{</span><span class="nv">$property</span><span class="si">}</span><span class="p">:</span> <span class="nv">$value</span><span class="err">;</span>
@@ -566,12 +546,11 @@
         <span class="nl">background-color</span><span class="p">:</span> <span class="no">yellow</span><span class="err">;</span>
     <span class="err">}</span>
 <span class="err">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>解析后的 css 代码：</p>
 
-<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nc">.demo</span> <span class="p">{</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.demo</span> <span class="p">{</span>
     <span class="nl">background-color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
     <span class="nl">-webkit-transition</span><span class="p">:</span> <span class="n">background-color</span> <span class="m">2s</span><span class="p">;</span>
     <span class="nl">-moz-transition</span><span class="p">:</span> <span class="n">background-color</span> <span class="m">2s</span><span class="p">;</span>
@@ -581,8 +560,7 @@
 <span class="nc">.demo</span><span class="nd">:hover</span> <span class="p">{</span>
     <span class="nl">background-color</span><span class="p">:</span> <span class="no">yellow</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="--extend">% + @extend</h4>
 
@@ -596,7 +574,7 @@
 
 <p>而 sass 的做法如下：</p>
 
-<div class="language-sass highlighter-rouge"><pre class="highlight"><code><span class="nv">%horizontal-scroll</span> <span class="err">{</span>
+<div class="language-sass highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">%horizontal-scroll</span> <span class="err">{</span>
     <span class="nl">white-space</span><span class="p">:</span> <span class="nb">nowrap</span><span class="err">;</span>
     <span class="nl">overflow-x</span><span class="p">:</span> <span class="nb">scroll</span><span class="err">;</span>
     <span class="nt">li</span> <span class="err">{</span>
@@ -613,12 +591,11 @@
 <span class="nt">section</span><span class="nc">.horizontal-scroll</span> <span class="err">{</span>
     <span class="k">@extend</span> <span class="nv">%horizontal-scroll</span><span class="o">;</span>
 <span class="err">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>解析后的 css 代码：</p>
 
-<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nt">section</span><span class="nc">.horizontal-scroll</span> <span class="p">{</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">section</span><span class="nc">.horizontal-scroll</span> <span class="p">{</span>
     <span class="nl">white-space</span><span class="p">:</span> <span class="nb">nowrap</span><span class="p">;</span>
     <span class="nl">overflow-x</span><span class="p">:</span> <span class="nb">scroll</span><span class="p">;</span>
 <span class="p">}</span>
@@ -631,8 +608,7 @@
     <span class="nl">height</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
     <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>这样做的优势为：</p>
 
@@ -677,31 +653,29 @@
 
 <p>定义多行省略时（以 3 行为例），变更显示行数只需修改 line-clamp 属性值，代码如下：</p>
 
-<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nc">.ellipsis-row3</span> <span class="p">{</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.ellipsis-row3</span> <span class="p">{</span>
     <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
     <span class="nl">display</span><span class="p">:</span> <span class="n">-webkit-box</span><span class="p">;</span>
     <span class="nl">text-overflow</span><span class="p">:</span> <span class="n">-o-ellipsis-lastline</span><span class="p">;</span>
     <span class="nl">-webkit-box-orient</span><span class="p">:</span> <span class="n">vertical</span><span class="p">;</span>
     <span class="nl">-webkit-line-clamp</span><span class="p">:</span> <span class="m">3</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>而定义单行省略只需如下 3 行：</p>
 
-<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nc">.ellipsis-row1</span> <span class="p">{</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.ellipsis-row1</span> <span class="p">{</span>
     <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
     <span class="nl">white-space</span><span class="p">:</span> <span class="nb">nowrap</span><span class="p">;</span>
     <span class="nl">text-overflow</span><span class="p">:</span> <span class="n">ellipsis</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>两段代码差异较大，而我们又想将多行与单行的情况融合在一个通用样式内。此时，可以使用 if 语句将单行省略单独定义。</p>
 
 <p>相关代码：</p>
 
-<div class="language-sass highlighter-rouge"><pre class="highlight"><code><span class="k">@for</span> <span class="nv">$lineCount</span> <span class="ow">from</span> <span class="m">1</span> <span class="ow">through</span> <span class="m">3</span> <span class="err">{</span>
+<div class="language-sass highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@for</span> <span class="nv">$lineCount</span> <span class="ow">from</span> <span class="m">1</span> <span class="ow">through</span> <span class="m">3</span> <span class="err">{</span>
     <span class="nv">%ellipsis-row</span><span class="si">#{</span><span class="nv">$lineCount</span><span class="si">}</span> <span class="err">{</span>
         <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="err">;</span>
         <span class="k">@if</span> <span class="nv">$lineCount</span> <span class="o">==</span> <span class="m">1</span> <span class="err">{</span>
@@ -725,12 +699,11 @@
 <span class="nc">.section3</span> <span class="nt">p</span> <span class="err">{</span>
     <span class="k">@extend</span> <span class="nv">%ellipsis-row3</span><span class="o">;</span>
 <span class="err">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>解析后的 css 代码：</p>
 
-<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nc">.section1</span> <span class="nt">p</span> <span class="p">{</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.section1</span> <span class="nt">p</span> <span class="p">{</span>
     <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
     <span class="nl">white-space</span><span class="p">:</span> <span class="nb">nowrap</span><span class="p">;</span>
     <span class="nl">text-overflow</span><span class="p">:</span> <span class="n">ellipsis</span><span class="p">;</span>
@@ -749,8 +722,7 @@
     <span class="nl">-webkit-box-orient</span><span class="p">:</span> <span class="n">vertical</span><span class="p">;</span>
     <span class="nl">-webkit-line-clamp</span><span class="p">:</span> <span class="m">3</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="for">@for</h4>
 
@@ -777,7 +749,7 @@
 
 <p>相关代码：</p>
 
-<div class="language-sass highlighter-rouge"><pre class="highlight"><code><span class="nv">%clear-float</span> <span class="err">{</span>
+<div class="language-sass highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">%clear-float</span> <span class="err">{</span>
     <span class="k">&amp;</span><span class="nd">:after</span> <span class="err">{</span>
         <span class="nl">content</span><span class="p">:</span> <span class="s2">""</span><span class="err">;</span>
         <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="err">;</span>
@@ -811,12 +783,11 @@
 <span class="nt">section</span><span class="nc">.static-template</span> <span class="err">{</span>
     <span class="k">@extend</span> <span class="nv">%static-template</span><span class="o">;</span>
 <span class="err">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>解析后的 css 代码：</p>
 
-<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nt">section</span><span class="nc">.static-template</span> <span class="nt">div</span><span class="nd">:after</span> <span class="p">{</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">section</span><span class="nc">.static-template</span> <span class="nt">div</span><span class="nd">:after</span> <span class="p">{</span>
     <span class="nl">content</span><span class="p">:</span> <span class="s1">""</span><span class="p">;</span>
     <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
     <span class="nl">height</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
@@ -839,8 +810,7 @@
 <span class="nt">section</span><span class="nc">.static-template</span> <span class="nc">.count3</span> <span class="nt">a</span> <span class="p">{</span>
     <span class="nl">width</span><span class="p">:</span> <span class="m">33.33333333%</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>上述其实是 <strong>多列布局</strong> 的一个实例，<strong>多列布局</strong> 的应用很广泛，比如导航栏：</p>
 
@@ -871,24 +841,22 @@
 
 <p>若你具备翻墙技能请直接：</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>gem install sass
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>sass
+</code></pre></div></div>
 
 <p>下面介绍如何不翻墙安装 Sass：</p>
 
 <p><strong>配置 gem sources</strong></p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># 移除 https://rubygems.org/</span>
-gem sources --remove https://rubygems.org/
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 移除 https://rubygems.org/</span>
+gem sources <span class="nt">--remove</span> https://rubygems.org/
 
 <span class="c"># 添加 https://gems.ruby-china.org/</span>
-gem sources -a https://gems.ruby-china.org/
+gem sources <span class="nt">-a</span> https://gems.ruby-china.org/
 
 <span class="c"># 查看 sources 确保仅有 https://gems.ruby-china.org/</span>
-gem sources -l
-</code></pre>
-</div>
+gem sources <span class="nt">-l</span>
+</code></pre></div></div>
 
 <p><strong>下载 sass.gem</strong></p>
 
@@ -896,9 +864,8 @@ gem sources -l
 
 <p><strong>安装 sass.gem</strong></p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>gem install <span class="o">[</span>sass.gem 路径]/sass.gem
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install</span> <span class="o">[</span>sass.gem 路径]/sass.gem
+</code></pre></div></div>
 
 <hr />
 
